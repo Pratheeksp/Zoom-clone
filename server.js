@@ -7,6 +7,7 @@ const io = require('socket.io')(server)
 const peerServer = ExpressPeerServer(server,{
     debug: true
 });
+const PORT = process.env.PORT || 3030;
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
@@ -30,4 +31,4 @@ io.on('connection',(socket)=>{
     })
 })
 
-server.listen(3030)
+server.listen(PORT)
